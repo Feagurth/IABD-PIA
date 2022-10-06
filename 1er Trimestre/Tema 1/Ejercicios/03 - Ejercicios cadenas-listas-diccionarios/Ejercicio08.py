@@ -6,35 +6,56 @@
 #  26   3   6   4    Diag. Secundaria = 48 + 6 + 3 + 1
 #   1   1   2  80
 
-
-
 import random
 
-salida = ""
-contador = 0
 
+# Inicialización de variables
 limiteSuperior = 100
 limiteInferior = 1
 
 laterales = 0
+diagonalPrincipal = 0
+diagonalSecundaria = 0
+lstLaterales = []
+lstDiagonal1 = []
+lstDiagonal2 = []
 
+
+# Petición de datos
 lado = int(input("Introduzca el tamaño de la martiz cuadrada: "))
 lista = []
 
-for i in range(1, (lado * lado)+1):
+for i in range(0, (lado * lado)):
     numero = random.randint(limiteInferior, limiteSuperior)
     lista.append(numero)
 
-    if((((i % (lado * lado)) == 1) or (i % (lado * lado) == 0)) and ((i / (lado * lado) == 0) or (i / (lado * lado)) >= (lado * lado) -1 )):
+    # Condición: Si la columna es 0 o lado -1 y la fila es es 0 o lado -1
+    if(((i // lado == 0) or (i // lado == (lado -1))) and (((i % lado) == 0) or ((i % lado) == (lado -1)))):
         laterales += numero
+        lstLaterales.append(str(numero))
 
+    # Condición: El número de columna y el número de fila son iguales
+    if((i // lado) == (i % lado)):
+        diagonalPrincipal += numero
+        lstDiagonal1.append(str(numero))
 
+    # Condición: El número de columna y el número de fila son iguales desde atrás
+    if(((lado - 1) - (i // lado)) == (i % lado)):
+        diagonalSecundaria += numero
+        lstDiagonal2.append(str(numero))
+
+salida = ""
+contador = 0
 # Impresión de la matriz generada
-for i in range(1, len(lista) + 1):
-    salida += str(lista[i - 1]).ljust(4)
+for i in range(0, len(lista)):
+    salida += str(lista[i]).ljust(4)
     contador += 1
 
-    if(contador != 1 and (len(lista)) % contador == 0):
+    if(contador >= lado):
         print(salida)
         contador = 0
         salida = ""
+
+print("Laterales: [%s]: %d"  %(" + ".join(lstLaterales), laterales))
+print("Diagonal principal: [%s]: %d"  %(" + ".join(lstDiagonal1), diagonalPrincipal))
+print("Diagonal secundaria: [%s]: %d"  %(" + ".join(lstDiagonal2), diagonalSecundaria))
