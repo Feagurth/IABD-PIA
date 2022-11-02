@@ -9,6 +9,7 @@ AMARILLO = '\u001b[33m'
 BLANCO = '\u001b[37m'
 ROJO = '\u001b[31m'
 RESET = '\u001b[0m' 
+FILEPATH = 'd:\\Users\\alumnado\\Documents\\Inteligencia Artificial & Big Data\\Programacion de Inteligencia Artificial\\1er Trimestre\\Tema 1\\Ejercicios\\05 - Ejercicios de E-S de datos\\'
 
 # Declaraciónd el tablero de juego
 tablero =  [[" " for count in range(3)] for count in range(3)]
@@ -33,7 +34,7 @@ def leer_entero(minimo:int, maximo:int, mensaje:str):
                 return seleccion
         except ValueError as error:
             # Si tenemos una excepción guardamos el error en un fichero y seguimos iterando el bucle
-            f = open("Ejercicio01_err.log", "a+")
+            f = open(FILEPATH + "Ejercicio01_err.log", "a+")
             f.write(str(datetime.now()) + " --> leer_entero --> " + str(error.args[0]) + "\n")
             f.close
 
