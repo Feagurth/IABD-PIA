@@ -15,7 +15,7 @@ FILEPATH = 'd:\\Users\\alumnado\\Documents\\Inteligencia Artificial & Big Data\\
 tablero =  [[" " for count in range(3)] for count in range(3)]
 colores_activos = True
 
-def leer_entero(minimo:int, maximo:int, mensaje:str):
+def leer_entero(minimo:int, maximo:int, mensaje:str)->int:
     """ 
         Función para pedir al usuario un numero entre un mínimo y un máximo incluidos mostrando un mensaje 
         minimo: valor mínimo que debe tener valor introducido por el usuario
