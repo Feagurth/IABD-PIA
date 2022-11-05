@@ -1,7 +1,7 @@
 # Modifica el ejercicio del 3 en raya para que si se produce una excepción se guarde en un archivo de texto información de dicho error. 
 # Es necesario almacenar la fecha, hora y error que se ha generado.
-import random
 import os
+import random
 from datetime import datetime
 
 # Declaración de constantes para los colores de las fichas
@@ -9,7 +9,7 @@ AMARILLO = '\u001b[33m'
 BLANCO = '\u001b[37m'
 ROJO = '\u001b[31m'
 RESET = '\u001b[0m' 
-FILEPATH = 'd:\\Users\\alumnado\\Documents\\Inteligencia Artificial & Big Data\\Programacion de Inteligencia Artificial\\1er Trimestre\\Tema 1\\Ejercicios\\05 - Ejercicios de E-S de datos\\'
+FILEPATH = ''
 
 # Declaraciónd el tablero de juego
 tablero =  [[" " for count in range(3)] for count in range(3)]

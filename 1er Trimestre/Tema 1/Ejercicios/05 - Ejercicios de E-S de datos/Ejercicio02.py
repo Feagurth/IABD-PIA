@@ -1,8 +1,9 @@
 # A partir de la información disponible en el archivo JSON que hay en la web datos.gob.es (https://datos.gob.es/es/catalogo/ea0019768-autores-espanoles-en-dominio-publico-en-2020-fallecidos-en-1939) sobre autores literarios, 
 # obtener un listado de todas las mujeres que lo componen. Guardar en un archivo CSV el id_BNE, nombre y género de los autores que nacieron en 1865.
-import json
 import csv
-FILEPATH = 'd:\\Users\\alumnado\\Documents\\Inteligencia Artificial & Big Data\\Programacion de Inteligencia Artificial\\1er Trimestre\\Tema 1\\Ejercicios\\05 - Ejercicios de E-S de datos\\'
+import json
+
+FILEPATH = ''
 
 # Abrimos el fichero en modo lectura para recuperar la información que contiene
 with open(FILEPATH + 'dominiopublico1939.json', encoding = 'utf-8') as o:
